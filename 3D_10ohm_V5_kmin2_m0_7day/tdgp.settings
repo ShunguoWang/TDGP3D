@@ -1,0 +1,76 @@
+! TDGP3D run settings -- Fortran namelist read by READ_TDGP_SETTINGS (tdgp3d_com.f90).
+! Copy to tdgp.settings in the run folder. A setting left out keeps the value shown
+! here; an unknown setting stops the run.
+! Fixed in tdgp3d_com.f90 (not settings): nugget sigma_m = 0.05, and the minimum
+! distance between nodes = 0.25*min(lambda_x, lambda_y, lambda_z).
+!
+! The forward mesh is MT3D_V6.dat in the run folder (V6 format). Its background
+! resistivity (1/background_conductivity) is the GP prior mean, i.e. the model away
+! from the nodes. Its freqmin/freqmax/nfreq lines are replaced by the periods of the
+! data file, its mesh_master lines are not used, and iteration_max_number limits the
+! forward iteration: a proposal whose iteration does not converge is rejected (counted as
+! "fwd not converged"). A body 100 times more conductive than the background needs about
+! 70 iterations, so use about 100 when logrho_min is two decades below the background.
+
+&tdgp_settings
+
+! Number of GP nodes: uniform prior between kmin and kmax (kmax <= 5000)
+kmin = 2
+kmax = 10000
+
+! Prior range of the node log10 resistivities [log10 ohm-m]
+logrho_min = -1.0
+logrho_max =  5.0
+
+
+! Sample the background m0 (the GP prior mean and the forward code's half-space, which also
+! fills everything outside the mesh) with the nodes, starting from the background of
+! MT3D_V6.dat, with the same uniform prior as the node values. .false. = keep MT3D_V6.dat's
+! background fixed. When sampled, m0 is the last column of the summary file and the last
+! value of every row of the ensemble file.
+sample_m0 = .true.
+
+! GP length scales [m]: x (north), y (east), z (depth)
+lambda_x = 200.0
+lambda_y = 200.0
+lambda_z = 200.0
+
+! Domain for the node locations (set automatically, printed at startup and written to
+! <outputBase>_domain.txt): horizontally the MT receivers plus a margin, never outside
+! the forward mesh; vertically from the surface down z_depth_min if it is given (> 0),
+! otherwise down one skin depth of the lowest frequency, 503.3*sqrt(rho_ref/f_min),
+! never below the forward mesh. rho_ref [ohm-m] is the average resistivity you expect.
+rho_ref = 100.0
+
+! x and y margin on each side of the receivers = max(xy_margin_frac*(receiver span), xy_margin_min [m])
+xy_margin_frac = 0.3
+xy_margin_min  = 2000.0
+
+! domain depth (zmax-zmin) [m]: if > 0 it replaces the skin depth above; 0 = use the skin depth
+z_depth_min = 3000.0
+
+! Optional: all three length scales grow with the depth d below the surface,
+! lambda + lambda_increase*d [m per m of depth], so deeper nodes reach farther in
+! x, y and z. 0 = constant.
+lambda_increase = 0.1
+
+! Proposal widths = range of x, y, depth and log10 rho divided by pertsdsc (larger = smaller steps)
+pertsdsc = 30.0
+
+! Parallel tempering: chain i has beta = 1/dTlog**(i-1).
+! Total MPI ranks = 1 + N_chains*nproc_per_team. A chain's nproc_per_team ranks share its
+! 2 x (number of periods) solves, one per frequency and polarization (x polarization of
+! frequency K on rank MOD(K-1, nproc_per_team), y polarization on MOD(K-1+number of periods,
+! nproc_per_team)). The time per iteration goes with the most solves on one rank, so use a
+! divisor of 2 x the number of periods: with 3 periods, 6 (one solve per rank, the fastest)
+! or 3 (two per rank; 4 and 5 are no faster). Every rank runs OMP_NUM_THREADS threads.
+dTlog          = 1.25
+N_chains       = 8
+nproc_per_team = 6
+
+! Run length, observed data (ModEM format) and output names
+NCHAIN     = 100000
+dataFile   = 'data.dat'
+outputBase = 'tdgp3d_out'
+
+/

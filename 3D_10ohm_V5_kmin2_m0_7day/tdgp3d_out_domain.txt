@@ -1,0 +1,11 @@
+! domain for the GP node locations used by this run (written by REPORT_DOMAIN3D in tdgp3d_com.f90)
+&tdgp_domain
+xmin =  -2.05000000E+03
+xmax =   2.05000000E+03
+ymin =  -2.05000000E+03
+ymax =   2.05000000E+03
+zmin =   0.00000000E+00
+zmax =   3.00000000E+03
+lambda_increase =   1.00000000E-01
+logrho_bg =   2.69897000E+00
+/
