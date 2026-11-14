@@ -23,11 +23,11 @@ The 3D forward solver is available on request from the authors of Dai et al. (20
 
 ## References
 
-- Blatter, D., Ray, A., & Key, K. (2021). Two-dimensional Bayesian inversion of magnetotelluric data using trans-dimensional Gaussian processes. *Geophysical Journal International*, 226(1), 548–563.
+- Blatter, D., Ray, A., & Key, K. (2021). Two-dimensional Bayesian inversion of magnetotelluric data using trans-dimensional Gaussian processes. *Geophysical Journal International*, 226(1), 548–563. https://doi.org/10.1093/gji/ggab110
 - Dai, S., Zhao, D., Wang, S., Li, K., & Jahandari, H. (2022). Three-dimensional magnetotelluric modeling in a mixed space-wavenumber domain. *Geophysics*, 87(4), E205–E217. https://doi.org/10.1190/geo2021-0216.1
-- Grandis, H., Menvielle, M., & Roussignol, M. (1999). Bayesian inversion with Markov chains—I. The magnetotelluric one-dimensional case. *Geophysical Journal International*, 138(3), 757–768.
-- Green, P. J. (1995). Reversible jump Markov chain Monte Carlo computation and Bayesian model determination. *Biometrika*, 82(4), 711–732.
-- Guo, R., Dosso, S. E., Liu, J., Dettmer, J., & Tong, X. (2011). Non-linearity in Bayesian 1-D magnetotelluric inversion. *Geophysical Journal International*, 185(2), 663–675.
-- Malinverno, A. (2002). Parsimonious Bayesian Markov chain Monte Carlo inversion in a nonlinear geophysical problem. *Geophysical Journal International*, 151(3), 675–688.
-- Mandolesi, E., Ogaya, X., Campanyà, J., & Piana Agostinetti, N. (2018). A reversible-jump Markov chain Monte Carlo algorithm for 1D inversion of magnetotelluric data. *Computers & Geosciences*, 113, 94–105.
-- Ray, A. (2021). Bayesian inversion using nested trans-dimensional Gaussian processes. *Geophysical Journal International*, 226(1), 302–326.
+- Grandis, H., Menvielle, M., & Roussignol, M. (1999). Bayesian inversion with Markov chains—I. The magnetotelluric one-dimensional case. *Geophysical Journal International*, 138(3), 757–768. https://doi.org/10.1046/j.1365-246X.1999.00904.x
+- Green, P. J. (1995). Reversible jump Markov chain Monte Carlo computation and Bayesian model determination. *Biometrika*, 82(4), 711–732. https://doi.org/10.1093/biomet/82.4.711
+- Guo, R., Dosso, S. E., Liu, J., Dettmer, J., & Tong, X. (2011). Non-linearity in Bayesian 1-D magnetotelluric inversion. *Geophysical Journal International*, 185(2), 663–675. https://doi.org/10.1111/j.1365-246X.2011.04996.x
+- Malinverno, A. (2002). Parsimonious Bayesian Markov chain Monte Carlo inversion in a nonlinear geophysical problem. *Geophysical Journal International*, 151(3), 675–688. https://doi.org/10.1046/j.1365-246X.2002.01847.x
+- Mandolesi, E., Ogaya, X., Campanyà, J., & Piana Agostinetti, N. (2018). A reversible-jump Markov chain Monte Carlo algorithm for 1D inversion of magnetotelluric data. *Computers & Geosciences*, 113, 94–105. https://doi.org/10.1016/j.cageo.2018.01.011
+- Ray, A. (2021). Bayesian inversion using nested trans-dimensional Gaussian processes. *Geophysical Journal International*, 226(1), 302–326. https://doi.org/10.1093/gji/ggab114
