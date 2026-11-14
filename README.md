@@ -24,7 +24,7 @@ The 3D forward solver is available on request from the authors of Dai et al. (20
 ## References
 
 - Blatter, D., Ray, A., & Key, K. (2021). Two-dimensional Bayesian inversion of magnetotelluric data using trans-dimensional Gaussian processes. *Geophysical Journal International*, 226(1), 548–563.
-- Dai, S., et al. (2022). [Full reference to be completed.]
+- Dai, S., Zhao, D., Wang, S., Li, K., & Jahandari, H. (2022). Three-dimensional magnetotelluric modeling in a mixed space-wavenumber domain. *Geophysics*, 87(4), E205–E217. https://doi.org/10.1190/geo2021-0216.1
 - Grandis, H., Menvielle, M., & Roussignol, M. (1999). Bayesian inversion with Markov chains—I. The magnetotelluric one-dimensional case. *Geophysical Journal International*, 138(3), 757–768.
 - Green, P. J. (1995). Reversible jump Markov chain Monte Carlo computation and Bayesian model determination. *Biometrika*, 82(4), 711–732.
 - Guo, R., Dosso, S. E., Liu, J., Dettmer, J., & Tong, X. (2011). Non-linearity in Bayesian 1-D magnetotelluric inversion. *Geophysical Journal International*, 185(2), 663–675.
