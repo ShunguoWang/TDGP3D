@@ -1,2 +1,2 @@
-# TDGP3D
+# TDGP3DMT
 Trans-Dimensional Gaussian Processes 3D Bayesian Inversion 
