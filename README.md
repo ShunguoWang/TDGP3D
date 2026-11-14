@@ -13,3 +13,5 @@ Bayesian inversion solves this by producing many models that all fit the data, w
 The step to 3D has been held back by computing cost, because each of the many thousands of forward calculations is expensive.
 
 In this work we present a trans-dimensional Bayesian inversion of 3D MT data. Gaussian processes turn a variable number of nodes into a smooth 3D resistivity model, and every model is tested with a full 3D forward calculation. Parallel computing cuts each calculation to about a few seconds. In a synthetic test with a buried conductive sphere, the method recovers the background resistivity, locates the conductor and its depth, and fits the data to the noise level.
+
+Here, the code is in CODES_TDGP_m0, and the demonstration example is in the folder of 3D_10ohm_V5_kmin2_m0_7day. 
