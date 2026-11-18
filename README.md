@@ -18,6 +18,7 @@ In this work, we present a trans-dimensional Bayesian inversion of 3D MT data. G
 
 - `CODES_TDGP3D_m0/` — inversion code
 - `3D_10ohm_V5_kmin2_m0_7day/` — synthetic example (buried conductive sphere)
+- `500ohm_ModEM/` — inversion result with ModEM (same input data and initial model)
 
 The 3D forward solver is available on request from the authors of Dai et al. (2022).
 
